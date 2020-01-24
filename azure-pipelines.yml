@@ -30,33 +30,11 @@ steps:
     configuration: '$(buildConfiguration)'
 
 
-# ...
-# do this after other tasks such as building
-- task: DotNetCoreCLI@2
-  inputs:
-    command: test
-    projects: '**/*Tests/*.csproj'
-    arguments: '--configuration $(buildConfiguration)'
-
-
-- task: CopyFiles@2
-  inputs:
-    SourceFolder: '$(system.defaultworkingdirectory)'
-    Contents: '**\bin\$(BuildConfiguration)\** **\$(BuildConfiguration)\*test*.dll !**\obj\**'
-    TargetFolder: '$(build.artifactstagingdirectory)'
-
 
 - task: VSTest@2
   inputs:
     platform: '$(buildPlatform)'
     configuration: '$(buildConfiguration)'
-
-
-
-
-
-
-
 
 - task: PublishBuildArtifacts@1
   inputs:
