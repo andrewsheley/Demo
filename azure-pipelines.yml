@@ -32,7 +32,7 @@ steps:
 
 # ...
 # do this after other tasks such as building
-- task: VSTest@2
+- task: DotNetCoreCLI@2
   inputs:
     command: test
     projects: '**/*Tests/*.csproj'
