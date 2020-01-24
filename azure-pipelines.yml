@@ -30,10 +30,13 @@ steps:
     configuration: '$(buildConfiguration)'
 
 
+# ...
+# do this after other tasks such as building
 - task: VSTest@2
   inputs:
-    platform: '$(buildPlatform)'
-    configuration: '$(buildConfiguration)'
+    command: test
+    projects: '**/*Tests/*.csproj'
+    arguments: '--configuration $(buildConfiguration)'
 
 
 
