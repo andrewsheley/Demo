@@ -30,22 +30,26 @@ steps:
     configuration: '$(buildConfiguration)'
 
 
-- task: VSTest@2
+
+
+- task: CopyFiles@2
   inputs:
-    testSelector: 'testAssemblies'
-    testAssemblyVer2: |
-      **\*test*.dll
-      !**\*TestAdapter.dll
-      !**\obj\**
-    searchFolder: '$(System.DefaultWorkingDirectory)'
-
-
+    SourceFolder: '$(system.defaultworkingdirectory)'
+    Contents: '**\bin\$(BuildConfiguration)\** **\$(BuildConfiguration)\*test*.dll !**\obj\**'
+    TargetFolder: '$(build.artifactstagingdirectory)'
 
 
 - task: VSTest@2
   inputs:
     platform: '$(buildPlatform)'
     configuration: '$(buildConfiguration)'
+
+
+
+
+
+
+
 
 - task: PublishBuildArtifacts@1
   inputs:
