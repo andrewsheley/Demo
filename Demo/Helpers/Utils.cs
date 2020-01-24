@@ -7,6 +7,6 @@ namespace Demo.Helpers
 {
     public static class Utils
     {
-        public static string DisplayName(string firstName, string lastName) => $"{firstName}, {lastName}xxx";
+        public static string DisplayName(string firstName, string lastName) => $"{firstName}, {lastName}";
     }
 }
