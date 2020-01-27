@@ -24,16 +24,6 @@ steps:
 
 
 
-- task: SonarCloudPrepare@1
-  inputs:
-    SonarCloud: 'sonarclouid_connection'
-    organization: 'andrewsheley'
-    scannerMode: 'MSBuild'
-    projectKey: 'andrewsheley_Demo'
-    projectName: 'Demo'
-
-
-
 
 
 
@@ -52,10 +42,6 @@ steps:
     command: test
     projects: '**/*Tests/*.csproj'
     arguments: '--configuration $(buildConfiguration)'
-
-
-- task: SonarCloudAnalyze@1
-
 
 
 
