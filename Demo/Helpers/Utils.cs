@@ -7,7 +7,7 @@ namespace Demo.Helpers
 {
     public static class Utils
     {
-        public static string DisplayName(string firstName, string lastName) => $"{firstName}, {lastName}";
+        public static string DisplayName(string firstName, string lastName) => $"{firstName}, {lastName}xxx";
 
         public static int MultiplyMe(int first, int second) => first * second;
 
